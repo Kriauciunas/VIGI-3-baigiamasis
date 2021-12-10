@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Table from '../components/Table';
 import NewUser from '../components/NewUser';
+import UpdateUser from '../components/UpdateUser';
 
 // Axios
 
@@ -35,14 +36,14 @@ const Admin = () => {
   return (
     <>
       <header>
-        <h1>Kalėdos 2021</h1>
+        <h1>Naujieji 2022</h1>
       </header>
       <main>
         <section>
           <h2>Dalyviai</h2>
 
           {loading ? (
-            <h4>...Loading...</h4>
+            <h4>Kraunasi</h4>
           ) : (
             <div>
               {error && error.message}
@@ -53,6 +54,7 @@ const Admin = () => {
           )}
         </section>
         <NewUser usersState={usersState} setUsersState={setUsersState} />
+        <UpdateUser usersState={usersState} setUsersState={setUsersState} />
       </main>
     </>
   );

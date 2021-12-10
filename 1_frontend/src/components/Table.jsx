@@ -21,7 +21,6 @@ const Table = ({ usersState, setUsersState }) => {
         <table>
           <thead>
             <tr>
-              <th>ID</th>
               <th>Vardas</th>
               <th>Pavardė</th>
               <th>El. paštas</th>
@@ -32,7 +31,6 @@ const Table = ({ usersState, setUsersState }) => {
           <tbody>
             {usersState.map((item) => (
               <tr key={item._id}>
-                <td>{item._id}</td>
                 <td>{item.name}</td>
                 <td>{item.surname}</td>
                 <td>{item.email}</td>

@@ -1,18 +1,19 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-require('dotenv').config();
+import express from 'express';
+import cors from 'cors';
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+import User from './models/UserModel.js';
 
+dotenv.config();
 const app = express();
 const PORT = process.env.PORT;
 
-const User = require('./models/UserModel');
-
-// Midilwares
+// Middlewares
 app.use(cors());
 app.use(express.json());
 
-// Connecting to mongoDB
+// Connecting to MongoDB and Starting server
+
 mongoose
   .connect(process.env.MONGODB_URI)
   .then((result) =>
@@ -23,35 +24,79 @@ mongoose
   .catch((err) => console.log(err));
 
 // ROUTES
-// GET: test
+
 app.get('/', (req, res) => res.send('API is running...'));
 
-// GET: get all users
-app.get('/api/users', (req, res) => {
-  User.find({}).then((data) => res.json(data));
+// GET
+//  get all users
+app.get('/users', async (req, res) => {
+  try {
+    let users = await User.find({});
+    if (users) {
+      res.send(users);
+    }
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 // POST
-// -- add new user
-app.post('/api/users', (req, res) => {
-  const userData = req.body; // user data from frontend
+//  add new user
+app.post('/users', async (req, res) => {
+  if (!req.body) return res.status(400).json({ message: 'missing user input' });
+  const users = await User.find();
 
-  // saving new user
-  const user = new User(userData);
-
-  user
-    .save()
-    .then((result) => res.send({ message: 'User saved' }))
-    .catch((err) => res.send({ message: 'User not saved, try again latter' }));
+  const userExists = users.some((user) => user.email === req.body.email);
+  if (userExists) {
+    res.json({
+      status: 'failed',
+      message: 'Toks el.paštas jau užregistruotas',
+    });
+  } else {
+    try {
+      const user = new User(req.body);
+      await user.save();
+      const users = await User.find();
+      res.json({
+        status: 'success',
+        users: users,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }
 });
 
 // PUT
-// -- update single user
-app.put('/api/users/:id', (req, res) => {
-  const userId = req.params.id;
-  const updatedUser = req.body;
+//  update single user
+app.put('/users', async (req, res) => {
+  try {
+    if (!req.body) {
+      return res.status(400).json({ message: 'trūksta vartotojo įvesties' });
+    }
 
-  User.findByIdAndUpdate(userId, updatedUser)
-    .then((result) => res.json({ message: 'User updated' }))
-    .catch((err) => res.json({ message: 'User not updated, try again later' }));
+    console.log(req.body);
+    const { _id } = req.body;
+    let update = req.body;
+
+    await User.findOneAndUpdate({ _id: _id }, update);
+    const users = await User.find();
+
+    res.json({ message: 'user updated', users: users });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+// DELETE: Delete single user based on id
+
+app.delete('/users/:id', async (req, res) => {
+  try {
+    const userId = req.params.id;
+    const deletedUser = await User.findByIdAndDelete(userId);
+    res.json({ message: 'vartotojas ištrintas' });
+  } catch (err) {
+    console.log(err);
+    res.json({ message: 'ištrinti nepavyko' });
+  }
 });
