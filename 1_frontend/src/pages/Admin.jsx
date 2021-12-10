@@ -36,7 +36,7 @@ const Admin = () => {
   return (
     <>
       <header>
-        <h1>Naujieji 2022</h1>
+        <h1 className='new'>Naujieji 2022</h1>
       </header>
       <main>
         <section>

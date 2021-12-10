@@ -36,11 +36,36 @@
     transform: rotate(360deg);
   }
 }
-.spinner {
-  margin-top: 300px;
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 180px;
+  width: 350px;
+  margin: auto;
 }
 
-.spinner-border {
-  width: 6rem;
-  height: 6rem;
+.clock section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.clock section p {
+  font-size: 3rem;
+}
+.timer-container {
+  height: 20vh;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.new {
+  padding: 50px;
 }
