@@ -1,11 +1,11 @@
 import React, { useReducer } from 'react';
 import axios from 'axios';
-import FormInputs from './Form';
+import Form from './Form';
 
 // Axios
 axios.defaults.baseURL = 'http://localhost:5000';
 
-const initialState = { name: '', email: '', surname: '' };
+const initialState = { name: '', surname: '', email: '', age: '' };
 const reducer = (state, action) => {
   switch (action.type) {
     case 'LOAD':
@@ -39,15 +39,14 @@ const UpdateUser = ({ usersState, setUsersState }) => {
   };
 
   const updateUser = async (e) => {
-    console.log('hit');
     e.preventDefault();
     try {
       const { _id, name, email, surname, age } = state;
       const res = await axios.put(`/users/`, {
         _id: _id,
         name: name,
-        email: email,
         surname: surname,
+        email: email,
         age: +age,
       });
       console.log(res);
@@ -59,12 +58,12 @@ const UpdateUser = ({ usersState, setUsersState }) => {
   };
   return (
     <section>
-      <h2>Redaguoti vartotoją</h2>
+      <h2>Redaguoti dalyvio duomenis</h2>
       <div>
         {usersState && (
           <select onChange={(e) => handleSelect(e)}>
             <option key={1} value={''}>
-              Pasirinkite vartotoja pagal el. paštą
+              Pasirinkite dalyvį pagal el. paštą
             </option>
             {usersState.map((item) => (
               <option key={item._id} value={item._id}>
@@ -73,7 +72,7 @@ const UpdateUser = ({ usersState, setUsersState }) => {
             ))}
           </select>
         )}
-        <FormInputs state={state} handleChange={handleChange} />
+        <Form state={state} handleChange={handleChange} />
 
         <input onClick={updateUser} type='submit' value='Atnaujinti' />
       </div>

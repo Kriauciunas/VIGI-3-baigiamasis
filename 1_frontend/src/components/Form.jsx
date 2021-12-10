@@ -3,7 +3,7 @@ import React from 'react';
 const Form = ({ state, handleChange }) => {
   return (
     <>
-      <label htmlFor='name'>Vardas</label>
+      <label htmlFor='name'>Vardas </label>
       <input
         type='text'
         name='name'
@@ -13,7 +13,7 @@ const Form = ({ state, handleChange }) => {
         onChange={(e) => handleChange(e)}
       />
 
-      <label htmlFor='surname'>Pavardė</label>
+      <label htmlFor='surname'>Pavardė </label>
       <input
         type='text'
         name='surname'
@@ -23,7 +23,7 @@ const Form = ({ state, handleChange }) => {
         onChange={(e) => handleChange(e)}
       />
 
-      <label htmlFor='email'>El. paštas</label>
+      <label htmlFor='email'>El. paštas </label>
       <input
         type='email'
         name='email'
@@ -33,7 +33,7 @@ const Form = ({ state, handleChange }) => {
         required
       />
 
-      <label htmlFor='age'>Amžius</label>
+      <label htmlFor='age'>Amžius </label>
       <input
         type='number'
         name='age'

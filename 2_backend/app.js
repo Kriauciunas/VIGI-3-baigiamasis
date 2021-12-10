@@ -82,7 +82,7 @@ app.put('/users', async (req, res) => {
     await User.findOneAndUpdate({ _id: _id }, update);
     const users = await User.find();
 
-    res.json({ message: 'user updated', users: users });
+    res.json({ message: 'vartotojas atnajintas', users: users });
   } catch (error) {
     console.log(error);
   }
