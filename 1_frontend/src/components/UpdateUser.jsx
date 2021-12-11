@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react';
 import axios from 'axios';
 import Form from './Form';
-
+import './Styles/UpdateUser.css';
 // Axios
 axios.defaults.baseURL = 'http://localhost:5000';
 
@@ -59,7 +59,7 @@ const UpdateUser = ({ usersState, setUsersState }) => {
   return (
     <section>
       <h2>Redaguoti dalyvio duomenis</h2>
-      <div>
+      <div className='update'>
         {usersState && (
           <select onChange={(e) => handleSelect(e)}>
             <option key={1} value={''}>
@@ -73,9 +73,13 @@ const UpdateUser = ({ usersState, setUsersState }) => {
           </select>
         )}
         <Form state={state} handleChange={handleChange} />
-
-        <input onClick={updateUser} type='submit' value='Atnaujinti' />
       </div>
+      <input
+        className='updateBtn'
+        onClick={updateUser}
+        type='submit'
+        value='Atnaujinti'
+      />
     </section>
   );
 };

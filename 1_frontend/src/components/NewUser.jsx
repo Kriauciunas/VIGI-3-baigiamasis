@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react';
 import axios from 'axios';
 import Form from './Form';
-
+import './Styles/NewUser.css';
 // Axios
 
 axios.defaults.baseURL = 'http://localhost:5000';
@@ -50,7 +50,9 @@ const NewUser = ({ setUsersState }) => {
 
       <Form state={state} handleChange={handleChange} />
 
-      <input onClick={addUser} type='submit' value='Pridėti' />
+      <button onClick={addUser} type='submit'>
+        Pridėti
+      </button>
     </section>
   );
 };

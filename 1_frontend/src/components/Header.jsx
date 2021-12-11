@@ -1,10 +1,14 @@
 import { Link } from 'react-router-dom';
+import logo from '../img/newYear.jpg';
 
 const Header = () => {
   return (
     <header>
-      <nav>
-        <ul>
+      <div className='header'>
+        <div>
+          <img class='company' src={logo} alt='logo' />
+        </div>
+        <ul className='nav'>
           <li>
             <Link to='/'>Registracija</Link>
           </li>
@@ -12,7 +16,7 @@ const Header = () => {
             <Link to='/users'>Visi dalyviai</Link>
           </li>
         </ul>
-      </nav>
+      </div>
     </header>
   );
 };

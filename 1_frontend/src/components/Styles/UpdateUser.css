@@ -1,0 +1,19 @@
+.update {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.updateBtn {
+  display: block;
+  margin: 0 auto;
+  background-color: #2487ce;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+
+.updateBtn:hover {
+  background-color: #16507b;
+  color: white;
+}

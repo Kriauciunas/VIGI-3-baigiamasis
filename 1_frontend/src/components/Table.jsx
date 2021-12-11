@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-
+import './Styles/Table.css';
 // Axios
 
 axios.defaults.baseURL = 'http://localhost:5000';
