@@ -1,6 +1,9 @@
 import React from 'react';
 import axios from 'axios';
+
+// Styles
 import './Styles/Table.css';
+
 // Axios
 
 axios.defaults.baseURL = 'http://localhost:5000';
@@ -36,7 +39,11 @@ const Table = ({ usersState, setUsersState }) => {
                 <td>{item.email}</td>
                 <td>{item.age}</td>
                 <td>
-                  <button clear onClick={() => deleteUser(item._id)}>
+                  <button
+                    className='btnDelete'
+                    clear
+                    onClick={() => deleteUser(item._id)}
+                  >
                     Ištrinti
                   </button>
                 </td>

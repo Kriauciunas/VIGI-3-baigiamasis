@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 
+// Components
 import NewUser from '../components/NewUser';
 import TimesDown from '../components/TimesDown/TimesDown';
-
-// Axios
-
-axios.defaults.baseURL = 'http://localhost:5000';
 
 const Admin = () => {
   // State

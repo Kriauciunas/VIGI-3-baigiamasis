@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-// components
+// Components
 import UpdateUser from '../components/UpdateUser';
 import Table from '../components/Table';
 
@@ -13,7 +13,6 @@ const UsersPage = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  // Function
   const getUsers = async () => {
     setLoading(true);
     try {
@@ -36,7 +35,7 @@ const UsersPage = () => {
     <>
       <h1>Renginio dalyviai</h1>
       {loading ? (
-        <h4>...Loading...</h4>
+        <h4>Kraunasi...</h4>
       ) : (
         <div>
           {error && error.message}

@@ -1,7 +1,12 @@
 import React, { useReducer } from 'react';
 import axios from 'axios';
-import Form from './Form';
+
+// Styles
 import './Styles/UpdateUser.css';
+
+// Components
+import Form from './Form';
+
 // Axios
 axios.defaults.baseURL = 'http://localhost:5000';
 
@@ -19,10 +24,9 @@ const reducer = (state, action) => {
   }
 };
 const UpdateUser = ({ usersState, setUsersState }) => {
-  // form state
+  // State
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  //  custom  functions
   const handleSelect = (e) => {
     const userId = e.target.value;
     const user = usersState.find((item) => item._id === userId);

@@ -1,9 +1,12 @@
 import React from 'react';
 
+// Style
+import './Styles/Form.css';
+
 const Form = ({ state, handleChange }) => {
   return (
     <>
-      <main className='form'>
+      <main className='add'>
         <label className='label' htmlFor='name'>
           Vardas{' '}
         </label>

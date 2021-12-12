@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+// img
 import logo from '../img/newYear.jpg';
 
 const Header = () => {

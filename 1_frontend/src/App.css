@@ -1,3 +1,6 @@
+* {
+  margin: 0;
+}
 .clock {
   display: flex;
   justify-content: center;
@@ -76,4 +79,29 @@ h1 {
 h2 {
   text-align: center;
   padding: 50px;
+}
+h4 {
+  text-align: center;
+}
+.btnAdd {
+  display: block;
+  margin: 0 auto;
+  background-color: #2487ce;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+.btnAdd:hover {
+  background-color: #16507b;
+  color: white;
+}
+.btnDelete {
+  background-color: #2487ce;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+.btnDelete:hover {
+  background-color: #16507b;
+  color: white;
 }
