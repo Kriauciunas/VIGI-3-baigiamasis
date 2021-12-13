@@ -86,22 +86,26 @@ h4 {
 .btnAdd {
   display: block;
   margin: 0 auto;
-  background-color: #2487ce;
+  background-color: #edc55d;
   color: white;
   padding: 5px 15px;
   border-radius: 5px;
 }
 .btnAdd:hover {
-  background-color: #16507b;
+  background-color: #af8108;
   color: white;
 }
 .btnDelete {
-  background-color: #2487ce;
+  background-color: #edc55d;
   color: white;
   padding: 5px 15px;
   border-radius: 5px;
 }
 .btnDelete:hover {
-  background-color: #16507b;
+  background-color: #af8108;
   color: white;
+}
+body {
+  background-image: url('./img/background.jpg');
+  background-size: 1920px;
 }

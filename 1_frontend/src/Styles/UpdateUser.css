@@ -7,13 +7,13 @@
 .updateBtn {
   display: block;
   margin: 0 auto;
-  background-color: #2487ce;
+  background-color: #edc55d;
   color: white;
   padding: 5px 15px;
   border-radius: 5px;
 }
 
 .updateBtn:hover {
-  background-color: #16507b;
+  background-color: #af8108;
   color: white;
 }

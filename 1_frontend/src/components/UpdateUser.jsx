@@ -2,7 +2,7 @@ import React, { useReducer } from 'react';
 import axios from 'axios';
 
 // Styles
-import './Styles/UpdateUser.css';
+import '../Styles/UpdateUser.css';
 
 // Components
 import Form from './Form';

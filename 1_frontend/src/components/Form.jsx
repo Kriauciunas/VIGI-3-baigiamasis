@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Style
-import './Styles/Form.css';
+import '../Styles/Form.css';
 
 const Form = ({ state, handleChange }) => {
   return (
