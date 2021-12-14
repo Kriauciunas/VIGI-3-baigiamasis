@@ -11,6 +11,6 @@ npm install
 npm run nodemon
 
 Frontend:
-In your terminal locate 1_frontend folder by writing: cd 2_frontend
+In your terminal locate 1_frontend folder by writing: cd 1_frontend
 npm install
 npm start
