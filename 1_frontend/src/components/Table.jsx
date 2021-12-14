@@ -27,7 +27,7 @@ const Table = ({ usersState, setUsersState }) => {
               <th>Vardas</th>
               <th>Pavardė</th>
               <th>El. paštas</th>
-              <th>Amžius</th>
+              <th>Gimimo metai</th>
               <th>Ištrinti</th>
             </tr>
           </thead>
@@ -37,7 +37,7 @@ const Table = ({ usersState, setUsersState }) => {
                 <td>{item.name}</td>
                 <td>{item.surname}</td>
                 <td>{item.email}</td>
-                <td>{item.age}</td>
+                <td>{2021 - item.age}</td>
                 <td>
                   <button
                     className='btnDelete'
